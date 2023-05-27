@@ -11,3 +11,6 @@ kernel32-sys = "0.2.2"
 win_etw_macros = "0.1.*"
 ntapi = "0.4.1"
 win_etw_provider = "0.1.*"
+
+[build-dependencies]
+static_vcruntime = "2.0"
