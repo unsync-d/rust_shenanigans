@@ -1,0 +1,18 @@
+[package]
+name = "unhook_ntdll"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[build-dependencies]
+static_vcruntime = "2.0"
+
+[dependencies]
+object = "0.31.0"
+winapi = "0.3.5"
+memmap2 = "0.6.1"
+pelite = "0.10"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.5", features = ["memoryapi", "psapi", "libloaderapi", "fileapi", "handleapi", "winnt","impl-default", "debug", "winuser", "wingdi", "winnt", "processthreadsapi", "handleapi", "memoryapi", "tlhelp32"] }
+object = { version = "0.31.0", features = ["pe"]}
